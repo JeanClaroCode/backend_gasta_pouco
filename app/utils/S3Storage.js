@@ -47,9 +47,6 @@ class S3Storage {
         ContentType,
       }));
       console.log('Credenciais válidas!');
-      console.log('Access Key:', process.env.AWS_ACCESS_KEY_ID);
-      console.log('Secret Access Key:', process.env.AWS_SECRET_ACCESS_KEY);
-      console.log('Region:', process.env.AWS_REGION);
     } catch (err) {
       console.error(err);
     }
