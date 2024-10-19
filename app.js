@@ -9,7 +9,7 @@ require('dotenv').config();
 
 // Configuração do CORS
 app.use(cors({
-  origin: 'http://localhost:3000', 
+  origin: 'https://frontend-gasta-pouco-an17qrmxo-jeanclarocodes-projects.vercel.app/', 
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization', 'x-access-token'],
   credentials: true
