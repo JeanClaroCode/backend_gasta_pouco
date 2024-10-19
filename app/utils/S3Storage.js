@@ -12,8 +12,6 @@ const AWS_ACCESS_KEY_ID = process.env.AWS_ACCESS_KEY_ID;
 const AWS_SECRET_ACCESS_KEY = process.env.AWS_SECRET_ACCESS_KEY;
 const AWS_REGION = process.env.AWS_REGION;
 
-// Verificando se as variáveis de ambiente foram carregadas corretamente
-console.log('dotenv loaded:', process.env.AWS_ACCESS_KEY_ID);
 class S3Storage {
   constructor() {
     this.client = new S3Client({
