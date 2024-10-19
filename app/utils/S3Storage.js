@@ -4,7 +4,6 @@ const { S3Client, PutObjectCommand } = require('@aws-sdk/client-s3');
 const multerConfig = require('../../config/multer');
 const mime = require('mime-types'); // Usando mime-types
 require('dotenv').config();
-console.log('Tentando carregar config.json');
 
 
 
