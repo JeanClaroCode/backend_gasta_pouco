@@ -1,8 +1,14 @@
 const mongoose = require('mongoose');
+require('dotenv').config();
 
 mongoose.Promise = global.Promise;
 
-mongoose.connect('mongodb://0.0.0.0:27017/backend', {
+const MONGO_URL = `mongodb+srv://jeanclarodev:${process.env.MONGO_PASSWORD}@cluster0.q7p6c.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
+if (!process.env.MONGO_PASSWORD) {
+    console.error('MONGO_PASSWORD is not defined');
+}
+
+mongoose.connect(MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
