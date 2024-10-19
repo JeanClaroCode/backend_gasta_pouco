@@ -25,7 +25,7 @@ require('./config/database');
 app.use('/users', usersRouter);
 app.use('/transactions', transactionsRouter);
 
-const PORT = 3001;
+const PORT = process.env.PORT || 3002;
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
