@@ -1,4 +1,2 @@
 config.json
-*.json
-*.env
 .env
