@@ -3,14 +3,14 @@ const fs = require('fs/promises');
 const { S3Client, PutObjectCommand } = require('@aws-sdk/client-s3');
 const multerConfig = require('../../config/multer');
 const mime = require('mime-types'); // Usando mime-types
-const dotenv = require('dotenv');
+require('dotenv').config();
 console.log('Tentando carregar config.json');
-const config = require('../../config.json');
 
 
-const AWS_ACCESS_KEY_ID = config.AWS_ACCESS_KEY_ID;
-const AWS_SECRET_ACCESS_KEY = config.AWS_SECRET_ACCESS_KEY;
-const AWS_REGION = config.AWS_REGION;
+
+const AWS_ACCESS_KEY_ID = process.env.AWS_ACCESS_KEY_ID;
+const AWS_SECRET_ACCESS_KEY = process.env.AWS_SECRET_ACCESS_KEY;
+const AWS_REGION = process.env.AWS_REGION;
 
 // Verificando se as variáveis de ambiente foram carregadas corretamente
 console.log('dotenv loaded:', process.env.AWS_ACCESS_KEY_ID);
@@ -54,9 +54,5 @@ class S3Storage {
     await fs.unlink(originalPath);
   }
 }
-
-console.log('Access Key:', process.env.AWS_ACCESS_KEY_ID);
-console.log('Secret Access Key:', process.env.AWS_SECRET_ACCESS_KEY);
-console.log('Region:', process.env.AWS_REGION);
 
 module.exports = S3Storage;
