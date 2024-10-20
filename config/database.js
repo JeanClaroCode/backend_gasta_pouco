@@ -3,7 +3,8 @@ require('dotenv').config();
 
 mongoose.Promise = global.Promise;
 
-const MONGO_URL = `mongodb+srv://jeanclarodev:${process.env.MONGO_PASSWORD}@cluster0.q7p6c.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
+const MONGO_URL = `mongodb+srv://jeanclarodev:${process.env.MONGO_PASSWORD}@gastapoucodb2.ohocl.mongodb.net/?retryWrites=true&w=majority&appName=gastapoucodb2`;
+
 if (!process.env.MONGO_PASSWORD) {
     console.error('MONGO_PASSWORD is not defined');
 }
